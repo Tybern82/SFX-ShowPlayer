@@ -1,0 +1,7 @@
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-NAudio.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-NAudio.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NAudio.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NAudio.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.csprojResolveAssemblyReference.cache
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.pdb

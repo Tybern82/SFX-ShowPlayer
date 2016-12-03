@@ -1,0 +1,8 @@
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\OpenTK.dll.config
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\SFX-Engine-OAL.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\SFX-Engine-OAL.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\OpenTK.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\OpenTK.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\obj\Debug\SFX-Engine-OpenAL.csprojResolveAssemblyReference.cache
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\obj\Debug\SFX-Engine-OAL.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\obj\Debug\SFX-Engine-OAL.pdb

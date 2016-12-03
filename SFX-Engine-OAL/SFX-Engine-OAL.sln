@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFX-Engine-OpenAL", "SFX-Engine-OpenAL.csproj", "{4E2E45BB-41FA-4CB8-A520-CF433E282D74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFX-Engine-NAudio", "..\SFX-Engine-NAudio\SFX-Engine-NAudio.csproj", "{B154D7B7-CC73-4833-85B5-A734E3886709}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFX-Engine-Base", "SFX-Engine-Base\SFX-Engine-Base.csproj", "{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFXEngine", "..\..\SFX-ShowPlayer\SFXEngine\SFXEngine.csproj", "{7BA8D13D-318B-4B05-BE45-7A01EBA64247}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E2E45BB-41FA-4CB8-A520-CF433E282D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2E45BB-41FA-4CB8-A520-CF433E282D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2E45BB-41FA-4CB8-A520-CF433E282D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2E45BB-41FA-4CB8-A520-CF433E282D74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B154D7B7-CC73-4833-85B5-A734E3886709}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B154D7B7-CC73-4833-85B5-A734E3886709}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B154D7B7-CC73-4833-85B5-A734E3886709}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B154D7B7-CC73-4833-85B5-A734E3886709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA8D13D-318B-4B05-BE45-7A01EBA64247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA8D13D-318B-4B05-BE45-7A01EBA64247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA8D13D-318B-4B05-BE45-7A01EBA64247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA8D13D-318B-4B05-BE45-7A01EBA64247}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

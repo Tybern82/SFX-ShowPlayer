@@ -1,0 +1,4 @@
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\SFX-Engine-Base\bin\Debug\SFX-Engine-Base.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\SFX-Engine-Base\bin\Debug\SFX-Engine-Base.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\SFX-Engine-Base\obj\Debug\SFX-Engine-Base.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\SFX-Engine-Base\obj\Debug\SFX-Engine-Base.pdb
