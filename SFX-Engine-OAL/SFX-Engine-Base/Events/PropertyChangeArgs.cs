@@ -18,5 +18,9 @@ namespace com.kintoshmalae.SFXEngine.Events {
 
         public PropertyChangeArgs(S source, string name, T nValue) : this (source, name, null, nValue) {}
         public PropertyChangeArgs(S source, string name) : this (source, name, null) {}
+
+        public override String ToString() {
+            return PropertyName + ":[" + PriorValue + "]->[" + NewValue + "]";
+        }
     }
 }

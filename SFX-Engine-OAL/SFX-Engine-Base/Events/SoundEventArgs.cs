@@ -17,5 +17,9 @@ namespace com.kintoshmalae.SFXEngine.Events {
             this.Type = type;
             this.CurrentSample = sample;
         }
+
+        public override String ToString() {
+            return Type + ":[" + CurrentSample + "]";
+        }
     }
 }

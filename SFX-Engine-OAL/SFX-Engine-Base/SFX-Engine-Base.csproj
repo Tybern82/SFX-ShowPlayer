@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net35-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -38,11 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audio\AudioSampleFormat.cs" />
+    <Compile Include="Audio\SFXFadeControl.cs" />
     <Compile Include="Audio\SFXPlaybackControl.cs" />
     <Compile Include="Audio\SoundFX.cs" />
     <Compile Include="Events\EventRegister.cs" />
     <Compile Include="Events\PropertyChangeArgs.cs" />
     <Compile Include="Events\SoundEventArgs.cs" />
+    <Compile Include="I18N\en\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="I18N\I18NString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SFXEventSource.cs" />
     <Compile Include="SFXUtilities.cs" />
@@ -50,7 +62,15 @@
   <ItemGroup>
     <Content Include="DynamicLoading.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="I18N\en\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
