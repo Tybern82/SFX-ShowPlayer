@@ -5,3 +5,7 @@ C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NA
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.csprojResolveAssemblyReference.cache
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-Base.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\log4net.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-Base.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\log4net.xml

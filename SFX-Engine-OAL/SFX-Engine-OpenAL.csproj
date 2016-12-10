@@ -50,6 +50,12 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SFX-Engine-Base\SFX-Engine-Base.csproj">
+      <Project>{c86c82a3-3d28-4ec7-8c0e-1ba38ef783a2}</Project>
+      <Name>SFX-Engine-Base</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

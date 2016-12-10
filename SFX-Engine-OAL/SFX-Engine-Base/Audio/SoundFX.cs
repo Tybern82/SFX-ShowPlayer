@@ -281,7 +281,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             for (uint currSample = 0; currSample < count; currSample++) { 
                 // calculate the relative volume control
                 float mult = 1.0f - (fadePosition / (float)fadeDuration);
-                for (int ch = 0; ch < audioFormat.channels; ch++) {
+                for (int ch = 0; ch < audioFormat.channelCount; ch++) {
                     // adjust volume for all the channels in this sample
                     buffer[offset + currSample] *= mult;
                 }
@@ -303,7 +303,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             for (uint currSample = 0; currSample < count; currSample++) { 
                 // calculate the relative volume control
                 float mult = (fadePosition / (float)fadeDuration);
-                for (int ch = 0; ch < audioFormat.channels; ch++) {
+                for (int ch = 0; ch < audioFormat.channelCount; ch++) {
                     buffer[offset + currSample] *= mult;
                 }
                 fadePosition++;

@@ -6,17 +6,17 @@ using System.Text;
 namespace com.kintoshmalae.SFXEngine.Audio {
     public class AudioSampleFormat {
         public static readonly uint DefaultSampleRate = 44100;
-        public static readonly uint DefaultChannels = 2;
-        public static readonly AudioSampleFormat DefaultFormat = new AudioSampleFormat(DefaultSampleRate, DefaultChannels);
+        public static readonly uint DefaultChannelCount = 2;
+        public static readonly AudioSampleFormat DefaultFormat = new AudioSampleFormat(DefaultSampleRate, DefaultChannelCount);
 
         public uint sampleRate { get; protected set; }
-        public uint channels { get; protected set; }
+        public uint channelCount { get; protected set; }
 
-        public uint samplesPerSecond { get { return sampleRate * channels; } }
+        public uint samplesPerSecond { get { return sampleRate * channelCount; } }
 
-        public AudioSampleFormat(uint sampleRate, uint channels) {
+        public AudioSampleFormat(uint sampleRate, uint channelCount) {
             this.sampleRate = sampleRate;
-            this.channels = channels;
+            this.channelCount = channelCount;
         }
     }
 }

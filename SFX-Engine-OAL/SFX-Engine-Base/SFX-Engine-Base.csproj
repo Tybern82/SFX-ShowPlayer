@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audio\AudioFileFactory.cs" />
+    <Compile Include="Audio\AudioPlayback.cs" />
+    <Compile Include="Audio\AudioPlaybackEngine.cs" />
     <Compile Include="Audio\AudioSampleFormat.cs" />
     <Compile Include="Audio\SFXFadeControl.cs" />
     <Compile Include="Audio\SFXPlaybackControl.cs" />
@@ -49,6 +52,7 @@
     <Compile Include="Events\EventRegister.cs" />
     <Compile Include="Events\PropertyChangeArgs.cs" />
     <Compile Include="Events\SoundEventArgs.cs" />
+    <Compile Include="Exceptions\UnsupportedAudioException.cs" />
     <Compile Include="I18N\en\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
