@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using com.kintoshmalae.SFXEngine.Exceptions;
+using com.kintoshmalae.SFXEngine.I18N;
 
 namespace com.kintoshmalae.SFXEngine.Audio {
     /**
@@ -18,32 +20,70 @@ namespace com.kintoshmalae.SFXEngine.Audio {
     /**
      * Interface to the factory used to construct SoundFX instances for reading audio file data from an input file/memory.
      */
-    public interface AudioFileFactory {
+    public class AudioFileFactory {
+        protected static readonly string LoadAudioFailedTypeMsg = "Audio_AudioFileFactory_LoadAudioFailedType";
+
+        protected AudioFileFactory(IEnumerable<AudioDataType> supportedTypes, IEnumerable<AudioDataType> supportedMemoryTypes) {
+            this.supportedTypes.AddRange(supportedTypes);
+            this.supportedMemoryTypes.AddRange(supportedMemoryTypes);
+        }
 
         /**
          * Determine the list of supported types capable of being read from a file by this library.
          */
-        List<AudioDataType> supportedTypes { get; }
+        public List<AudioDataType> supportedTypes { get; } = new List<AudioDataType>();
 
         /**
          * Determine the list of supported types capable of being read from a memory buffer by this library. Note that this
          * list of types will generally be a subset (or the same as) the list of supported types readable from file.
          */
-        List<AudioDataType> supportedMemoryTypes { get; }
+        public List<AudioDataType> supportedMemoryTypes { get; } = new List<AudioDataType>();
 
         /**
          * Load a SoundFX for reading audio data from the given file, based on the given type.
          */
-        SoundFX loadAudio(byte[] audioData, AudioDataType type);
+        public SoundFX loadAudio(byte[] audioData, AudioDataType type) {
+            if (!supportedMemoryTypes.Contains(type)) throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg));
+            switch (type) {
+                case AudioDataType.AAC:     return loadAAC(audioData);
+                case AudioDataType.AIFF:    return loadAIFF(audioData);
+                case AudioDataType.AU:      return loadAU(audioData);
+                case AudioDataType.FLAC:    return loadFLAC(audioData);
+                case AudioDataType.M4A:     return loadM4A(audioData);
+                case AudioDataType.MIDI:    return loadMIDI(audioData);
+                case AudioDataType.MP3:     return loadMP3(audioData);
+                case AudioDataType.OGG:     return loadOGG(audioData);
+                case AudioDataType.RAW:     return loadRAW(audioData);
+                case AudioDataType.WAVE:    return loadWAVE(audioData);
+                case AudioDataType.WEBM:    return loadWEBM(audioData);
+                case AudioDataType.WMA:     return loadWMA(audioData);
+                default:                    throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg));
+            }
+        }
+
+        public virtual SoundFX loadAAC(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadAIFF(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadAU(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadFLAC(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadM4A(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadMIDI(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadMP3(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadOGG(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadWAVE(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadWMA(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadWEBM(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
+        public virtual SoundFX loadRAW(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
 
         /**
          * Load a SoundFX from the given filename.
          */
-        SoundFX loadAudio(string fName);
+        public virtual SoundFX loadAudio(string fName) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
 
         /**
          * Load a SoundFX from the given file reference.
          */
-        SoundFX loadAudio(FileInfo fInfo);
+        public SoundFX loadAudio(FileInfo fInfo) {
+            return loadAudio(fInfo.FullName);
+        }
     }
 }

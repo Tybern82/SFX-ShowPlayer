@@ -11,36 +11,17 @@ using com.kintoshmalae.SFXEngine.NAudio.Sources;
 namespace com.kintoshmalae.SFXEngine.NAudio {
     public class AudioFileFactory : com.kintoshmalae.SFXEngine.Audio.AudioFileFactory {
 
-        private List<AudioDataType> _supportedMemoryTypes = new List<AudioDataType>(new []{AudioDataType.MP3});
-        public List<AudioDataType> supportedMemoryTypes {
-            get {
-                return _supportedMemoryTypes;
-            }
+        public AudioFileFactory() : base(
+            new[] { AudioDataType.MP3, AudioDataType.WAVE },        // types readable from file
+            new[] { AudioDataType.MP3 }                             // types readable from memory
+            ){}
+
+        public override SoundFX loadMP3(byte[] audioData) {
+            return new MP3MemorySoundFX(audioData);
         }
 
-        private List<AudioDataType> _supportedTypes = new List<AudioDataType>(new [] {AudioDataType.MP3, AudioDataType.WAVE});
-        public List<AudioDataType> supportedTypes {
-            get {
-                return _supportedTypes;
-            }
-        }
-
-        public SoundFX loadAudio(FileInfo fInfo) {
+        public override SoundFX loadAudio(String fName) {
             throw new NotImplementedException();
-        }
-
-        public SoundFX loadAudio(String fName) {
-            throw new NotImplementedException();
-        }
-
-        public SoundFX loadAudio(Byte[] audioData, AudioDataType type) {
-            switch (type) {
-                case AudioDataType.MP3:
-                    return new MP3MemorySoundFX(audioData);
-
-                default:
-                    throw new UnsupportedAudioException(I18NString.Lookup("Audio_AudioFileFactory_LoadAudioFailedType"));
-            }
         }
     }
 }
