@@ -61,6 +61,15 @@ namespace com.kintoshmalae.SFXEngine.I18N.en {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attempt to load an unsupported audio type. Ensure you check the supported types before attempting to load an audio file..
+        /// </summary>
+        internal static string Audio_AudioFileFactory_LoadAudioFailedType {
+            get {
+                return ResourceManager.GetString("Audio_AudioFileFactory_LoadAudioFailedType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attempt to duplicate a stream which does not support this operation. Ensure you check the stream using &apos;canDuplicate&apos; before attempting to copy an effect..
         /// </summary>
         internal static string Audio_SoundFX_DupFailed {

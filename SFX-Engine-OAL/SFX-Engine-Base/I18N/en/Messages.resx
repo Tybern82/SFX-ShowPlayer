@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Audio_AudioFileFactory_LoadAudioFailedType" xml:space="preserve">
+    <value>Attempt to load an unsupported audio type. Ensure you check the supported types before attempting to load an audio file.</value>
+    <comment>Message thrown when the caller attemts to load audio data from a file type which is not supported by the current library.</comment>
+  </data>
   <data name="Audio_SoundFX_DupFailed" xml:space="preserve">
     <value>Attempt to duplicate a stream which does not support this operation. Ensure you check the stream using 'canDuplicate' before attempting to copy an effect.</value>
     <comment>Message thrown when an attempt is made to duplicate an effect which does not support duplication.</comment>

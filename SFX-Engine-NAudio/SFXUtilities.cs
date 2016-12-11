@@ -7,9 +7,18 @@ using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 
 using com.kintoshmalae.SFXEngine.Exceptions;
+using com.kintoshmalae.SFXEngine.Audio;
 
 namespace com.kintoshmalae.SFXEngine.NAudio {
     class SFXUtilities {
+        public static WaveFormat ToWaveFormat(AudioSampleFormat f) {
+            return WaveFormat.CreateIeeeFloatWaveFormat((int)f.sampleRate, (int)f.channelCount);
+        }
+
+        public static AudioSampleFormat FromWaveFormat(WaveFormat f) {
+            return new AudioSampleFormat((uint)f.SampleRate, (uint)f.Channels);
+        }
+
         public static ISampleProvider ConvertSampleFormat(ISampleProvider source, WaveFormat dFormat) {
             // resample, if required
             if (source.WaveFormat.SampleRate != dFormat.SampleRate) source = new WdlResamplingSampleProvider(source, dFormat.SampleRate);

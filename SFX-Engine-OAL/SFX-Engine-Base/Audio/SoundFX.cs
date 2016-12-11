@@ -82,10 +82,10 @@ namespace com.kintoshmalae.SFXEngine.Audio {
         public bool canSeek { get; protected set; } = false;
 
         public uint sampleLength { get { return (uint)Math.Round(length.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven); } }
-        public uint currentSample { get { return _currentSample; } }
-        public TimeSpan currentTime { get { return new TimeSpan((_currentSample * TimeSpan.TicksPerSecond) / audioFormat.samplesPerSecond); } }
+        public virtual uint currentSample { get { return _currentSample; } }
+        public virtual TimeSpan currentTime { get { return new TimeSpan((_currentSample * TimeSpan.TicksPerSecond) / audioFormat.samplesPerSecond); } }
 
-        public bool seekForward(uint samples) {
+        public virtual bool seekForward(uint samples) {
             lock (_lock) {
                 if (canSeek) return seekTo(currentSample + samples);
 
@@ -102,12 +102,12 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             }
         }
 
-        public bool seekForward(TimeSpan ts) {
+        public virtual bool seekForward(TimeSpan ts) {
             uint samples = (uint)Math.Round(ts.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven);
             return seekForward(samples);
         }
 
-        public bool seekTo(uint samplePosition) {
+        public virtual bool seekTo(uint samplePosition) {
             lock (_lock) {
                 if (samplePosition == _currentSample) {
                     onSeek.triggerEvent(this, new SoundEventArgs(this, PlaybackEvent.Seek, _currentSample));
@@ -118,12 +118,12 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             }
         }
 
-        public bool seekTo(TimeSpan ts) {
+        public virtual bool seekTo(TimeSpan ts) {
             uint samplePosition = (uint)Math.Round(ts.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven);
             return seekTo(samplePosition);
         }
 
-        public bool reset() {
+        public virtual bool reset() {
             lock (_lock) {
                 bool _result = seekTo(0);
                 if (_result) {
@@ -255,7 +255,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
         protected abstract uint readSample(float[] buffer, uint offset, uint count);
 
         #region Internal Helpers
-        private uint _currentSample = 0;
+        protected uint _currentSample = 0;
 
         private long fadePosition = 0;
         private long fadeDuration = 0;
