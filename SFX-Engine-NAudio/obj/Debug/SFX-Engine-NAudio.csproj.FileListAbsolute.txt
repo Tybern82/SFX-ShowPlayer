@@ -8,4 +8,3 @@ C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SF
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-Base.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\log4net.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-Base.pdb
-C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\log4net.xml

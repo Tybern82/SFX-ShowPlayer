@@ -9,4 +9,3 @@ C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\obj\Debug\SFX-E
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\SFX-Engine-Base.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\log4net.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\SFX-Engine-Base.pdb
-C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\log4net.xml
