@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFXEngine", "..\..\SFX-Show
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFX-Engine-Base", "..\SFX-Engine-Base\SFX-Engine-Base.csproj", "{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timidity-NET", "..\Timidity-NET\Timidity-NET.csproj", "{F262FE0F-690B-4B09-8E9A-B3781A3858AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}.Release|x64.Build.0 = Release|Any CPU
 		{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}.Release|x86.ActiveCfg = Release|Any CPU
 		{C86C82A3-3D28-4EC7-8C0E-1BA38EF783A2}.Release|x86.Build.0 = Release|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Debug|x64.Build.0 = Debug|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Debug|x86.Build.0 = Debug|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Release|x64.ActiveCfg = Release|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Release|x64.Build.0 = Release|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{F262FE0F-690B-4B09-8E9A-B3781A3858AD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
