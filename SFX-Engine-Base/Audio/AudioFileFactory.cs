@@ -61,6 +61,10 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             }
         }
 
+        /**
+         * Overridden to support each given type of audio. Default implementation of each generates an exception when trying to play
+         * audio of that type, allowing a subclass to only override those which it actually supports.
+         */
         public virtual SoundFX loadAAC(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
         public virtual SoundFX loadAIFF(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }
         public virtual SoundFX loadAU(byte[] audioData) { throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg)); }

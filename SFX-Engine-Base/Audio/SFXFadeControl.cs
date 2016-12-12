@@ -84,5 +84,10 @@ namespace com.kintoshmalae.SFXEngine.Audio {
          * Trigger the start of the fade-out of this source. When the source has completely faded, the output will terminate.
          */
         void beginFadeOut();
+
+        /**
+         * Copy the fade state of the given parameter into this control.
+         */
+        void dupFadeState(SFXFadeControl fade);
     }
 }

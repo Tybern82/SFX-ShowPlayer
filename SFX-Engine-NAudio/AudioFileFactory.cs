@@ -11,10 +11,11 @@ using com.kintoshmalae.SFXEngine.NAudio.Sources;
 namespace com.kintoshmalae.SFXEngine.NAudio {
     public class AudioFileFactory : com.kintoshmalae.SFXEngine.Audio.AudioFileFactory {
 
-        public AudioFileFactory() : base(
-            new[] { AudioDataType.MP3, AudioDataType.WAVE },        // types readable from file
-            new[] { AudioDataType.MP3 }                             // types readable from memory
-            ){}
+        private static AudioDataType[] Supported = new [] {
+            AudioDataType.AIFF, AudioDataType.MP3, AudioDataType.WAVE, AudioDataType.FLAC, AudioDataType.OGG
+        };
+
+        public AudioFileFactory() : base(Supported, Supported) { }
 
         public override SoundFX loadMP3(byte[] audioData) {
             return new MP3MemorySoundFX(audioData);

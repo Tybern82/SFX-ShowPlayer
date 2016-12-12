@@ -72,11 +72,50 @@ namespace com.kintoshmalae.SFXEngine.Audio {
                 fadeState = FadeState.FadeOut;
             }
         }
+
+        public void dupFadeState(SFXFadeControl fade) {
+            lock (_lock) {
+                this.fadeState = fade.fadeState;
+                this.volume = fade.volume;
+                this.hasAutoFade = fade.hasAutoFade;
+                this.initialSeekTo = fade.initialSeekTo;
+                this.autoFadeOutAt = fade.autoFadeOutAt;
+                this.fadeInDuration = fade.fadeInDuration;
+                this.fadeOutDuration = fade.fadeOutDuration;
+                seekToFade();
+            }
+        }
+
+        /**
+         * Helper method to adjust the internal fade positions used to control the fade-in/out sequence to match a new
+         * position in the track (or manipulation of the fade parameters).
+         */
+        protected void seekToFade() {
+            lock (_lock) {
+                switch (fadeState) {
+                    case FadeState.FadeIn:
+                    case FadeState.FadeOut:
+                        fadeDuration = (long)Math.Round(fadeInDuration.TotalSeconds * audioFormat.sampleRate, MidpointRounding.AwayFromZero);
+                        break;
+                }
+
+                switch (fadeState) {
+                    case FadeState.FadeIn:
+                        fadePosition = currentSample - (long)Math.Round(initialSeekTo.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven);
+                        break;
+
+                    case FadeState.FadeOut:
+                        fadePosition = currentSample - autoFadeOutSample;
+                        break;
+
+                }
+            }
+        }
         #endregion
 
         #region SFXPlaybackControl
 
-        public PlaybackMode currentState { get; private set; } = PlaybackMode.Reset;
+        public PlaybackMode currentState { get; protected set; } = PlaybackMode.Reset;
         public TimeSpan length { get; protected set; } = TimeSpan.Zero;
         public AudioSampleFormat audioFormat { get; protected set; } = AudioSampleFormat.DefaultFormat;
         public bool canSeek { get; protected set; } = false;
@@ -98,6 +137,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
                     samplesRead += currRead;
                 }
                 onSeek.triggerEvent(this, new SoundEventArgs(this, PlaybackEvent.Seek, _currentSample));
+                seekToFade();   // adjust fade to new position
                 return true;
             }
         }
@@ -125,7 +165,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
 
         public virtual bool reset() {
             lock (_lock) {
-                bool _result = seekTo(0);
+                bool _result = seekTo(initialSeekTo);
                 if (_result) {
                     onReset.triggerEvent(this, new SoundEventArgs(this, PlaybackEvent.Reset, _currentSample));
                     currentState = PlaybackMode.Reset;

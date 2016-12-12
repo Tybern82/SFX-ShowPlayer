@@ -8,3 +8,10 @@ C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\obj\Debug\SF
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-Base.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\log4net.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\SFX-Engine-Base.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NAudio.Flac.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NAudio.Vorbis.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NAudio.WindowsMediaFormat.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NVorbis.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NAudio.Flac.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NAudio.Vorbis.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-NAudio\bin\Debug\NVorbis.xml
