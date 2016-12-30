@@ -19,7 +19,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
      * Interface to a Fadeable sound FX source. Provides the structure of methods necessary to manipulate the volume, and control
      * fading in and out of the source.
      */
-    public interface SFXFadeControl {
+    public interface ISFXFadeControl {
 
         /**
          * The base volume applied to the effect. This volume modifies the original source and is used as the basis of the fade methods.
@@ -88,6 +88,6 @@ namespace com.kintoshmalae.SFXEngine.Audio {
         /**
          * Copy the fade state of the given parameter into this control.
          */
-        void dupFadeState(SFXFadeControl fade);
+        void dupFadeState(ISFXFadeControl fade);
     }
 }

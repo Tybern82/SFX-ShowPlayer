@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using com.kintoshmalae.SFXEngine.I18N;
 using NAudio.Wave;
 
 namespace com.kintoshmalae.SFXEngine.NAudio {
@@ -28,6 +29,7 @@ namespace com.kintoshmalae.SFXEngine.NAudio {
         private int channelsToSend = 0;
 
         public int Read(float[] buffer, int offset, int count) {
+            if ((buffer == null) || (buffer.Length < (offset + count))) throw new ArgumentException(I18NString.Lookup("Audio_SoundFX_IncompleteBuffer"));
             int sentCount = 0;
             if (channelsToSend > 0) {
                 for (int x = 0; (x < count) && (channelsToSend > 0); x++, channelsToSend--, sentCount++) {

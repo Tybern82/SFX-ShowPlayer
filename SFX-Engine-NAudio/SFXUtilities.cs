@@ -8,9 +8,12 @@ using NAudio.Wave.SampleProviders;
 
 using com.kintoshmalae.SFXEngine.Exceptions;
 using com.kintoshmalae.SFXEngine.Audio;
+using com.kintoshmalae.SFXEngine.I18N;
 
 namespace com.kintoshmalae.SFXEngine.NAudio {
     class SFXUtilities {
+        private SFXUtilities() {}
+
         public static WaveFormat ToWaveFormat(AudioSampleFormat f) {
             return WaveFormat.CreateIeeeFloatWaveFormat((int)f.sampleRate, (int)f.channelCount);
         }
@@ -59,7 +62,7 @@ namespace com.kintoshmalae.SFXEngine.NAudio {
                     sInput.ConnectInputToOutput(5, 1);  // REAR-RIGHT
                     sInput.ConnectInputToOutput(6, 0);  // SIDE-LEFT
                     sInput.ConnectInputToOutput(7, 1);  // SIDE-RIGHT
-                } else throw new UnsupportedAudioException("Unable to convert audio file channels for output.");
+                } else throw new UnsupportedAudioException(I18NString.Lookup("Audio_ChannelConversionFailed"));
                 return sInput;
             } else if (AudioChannelCount == 6) {
                 if (snd.WaveFormat.Channels == 6) return snd;
@@ -83,7 +86,7 @@ namespace com.kintoshmalae.SFXEngine.NAudio {
                     sInput.ConnectInputToOutput(1, 3);
                     sInput.ConnectInputToOutput(0, 4);
                     sInput.ConnectInputToOutput(1, 5);
-                } else throw new UnsupportedAudioException("Unable to convert audio file channels for output.");
+                } else throw new UnsupportedAudioException(I18NString.Lookup("Audio_ChannelConversionFailed"));
                 return sInput;
             } else if (AudioChannelCount == 8) {
                 if (snd.WaveFormat.Channels == 8) return snd;
@@ -109,9 +112,9 @@ namespace com.kintoshmalae.SFXEngine.NAudio {
                     sInput.ConnectInputToOutput(1, 5);
                     sInput.ConnectInputToOutput(0, 6);
                     sInput.ConnectInputToOutput(0, 7);
-                } else throw new UnsupportedAudioException("Unable to convert audio file channels for output.");
+                } else throw new UnsupportedAudioException(I18NString.Lookup("Audio_ChannelConversionFailed"));
                 return sInput;
-            } else throw new UnsupportedAudioException("Unable to convert audio file channels for output.");
+            } else throw new UnsupportedAudioException(I18NString.Lookup("Audio_ChannelConversionFailed"));
         }
     }
 }

@@ -5,9 +5,10 @@ using System.Text;
 
 using System.IO;
 using NAudio.Vorbis;
+using com.kintoshmalae.SFXEngine.Audio;
 
 namespace com.kintoshmalae.SFXEngine.NAudio.Sources {
-    class OGGMemorySoundFX : MemorySoundFX {
+    class OGGMemorySoundFX : WaveStreamSoundFX {
 
         private byte[] oggData;
 
@@ -20,8 +21,10 @@ namespace com.kintoshmalae.SFXEngine.NAudio.Sources {
             }
         }
 
-        protected override MemorySoundFX basicDup() {
-            return (canDuplicate ? new OGGMemorySoundFX(oggData) : null);
+        protected override SoundFX basicDup {
+            get {
+                return (canDuplicate ? new OGGMemorySoundFX(oggData) : null);
+            }
         }
     }
 }

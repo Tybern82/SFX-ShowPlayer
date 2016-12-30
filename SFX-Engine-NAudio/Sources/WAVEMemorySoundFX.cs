@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using com.kintoshmalae.SFXEngine.Audio;
 using NAudio.Wave;
 
 namespace com.kintoshmalae.SFXEngine.NAudio.Sources {
-    class WAVEMemorySoundFX : MemorySoundFX {
+    class WAVEMemorySoundFX : WaveStreamSoundFX {
 
         private byte[] waveData;
 
@@ -19,8 +20,10 @@ namespace com.kintoshmalae.SFXEngine.NAudio.Sources {
             }
         }
 
-        protected override MemorySoundFX basicDup() {
-            return (canDuplicate ? new WAVEMemorySoundFX(waveData) : null);
+        protected override SoundFX basicDup {
+            get {
+                return (canDuplicate ? new WAVEMemorySoundFX(waveData) : null);
+            }
         }
     }
 }

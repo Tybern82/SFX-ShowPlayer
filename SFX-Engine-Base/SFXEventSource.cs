@@ -10,7 +10,7 @@ namespace com.kintoshmalae.SFXEngine {
     /**
      * Interface to the various events triggered during playback of a sound effect.
      */
-    public interface SFXEventSource {
+    public interface ISFXEventSource {
 
         /**
          * Event triggered when the track begins playing.

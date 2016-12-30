@@ -19,7 +19,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
      * control over the playing of the audio sample, including pausing, stopping, resetting and seeking, either forward (always available),
      * or to an arbritary position in the sample. This interface also defines the current and ending positions of the sample.
      */
-    public interface SFXPlaybackControl {
+    public interface ISFXPlaybackControl {
 
         /**
          * Current mode this effect is in.
@@ -71,7 +71,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
          * Seek to the given absolute position in the track. Only possible to seek backwards from the current
          * position if #canSeek is true.
          */    
-        bool seekTo(uint sample);
+        bool seekTo(uint samplePosition);
 
         /**
          * Seek to the given absolute time in the track. Only possible to seek backwards from the current

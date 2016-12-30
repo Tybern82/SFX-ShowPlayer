@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-
+using com.kintoshmalae.SFXEngine.Audio;
 using NAudio.Flac;
 
 namespace com.kintoshmalae.SFXEngine.NAudio.Sources {
-    class FLACMemorySoundFX : MemorySoundFX {
+    class FLACMemorySoundFX : WaveStreamSoundFX {
 
         private byte[] flacData;
 
@@ -20,8 +20,10 @@ namespace com.kintoshmalae.SFXEngine.NAudio.Sources {
             }
         }
 
-        protected override MemorySoundFX basicDup() {
-            return (canDuplicate ? new FLACMemorySoundFX(flacData) : null);
+        protected override SoundFX basicDup {
+            get {
+                return (canDuplicate ? new FLACMemorySoundFX(flacData) : null);
+            }
         }
     }
 }

@@ -20,6 +20,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SFX-Engine-Base.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SFX-Engine-Base.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SFXEngineKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
@@ -49,10 +58,21 @@
     <Compile Include="Audio\SFXFadeControl.cs" />
     <Compile Include="Audio\SFXPlaybackControl.cs" />
     <Compile Include="Audio\SoundFX.cs" />
+    <Compile Include="Audio\Sources\CachedSoundFX.cs" />
+    <Compile Include="Audio\Sources\SilenceSoundFX.cs" />
+    <Compile Include="Audio\StandardAnnouncements.Designer.cs">
+      <DependentUpon>StandardAnnouncements.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DMX\LXEngine.cs" />
+    <Compile Include="DMX\LXScene.cs" />
+    <Compile Include="DMX\LXUnit.cs" />
     <Compile Include="Events\EventRegister.cs" />
     <Compile Include="Events\PropertyChangeArgs.cs" />
     <Compile Include="Events\SoundEventArgs.cs" />
     <Compile Include="Exceptions\UnsupportedAudioException.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="I18N\en\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,11 +85,34 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DynamicLoading.txt" />
+    <None Include="Resources\Preshow - Show Beginning.mp3" />
+    <None Include="Resources\Preshow - 5 Minute Warning.mp3" />
+    <None Include="Resources\Preshow - 35 Minute Interval.mp3" />
+    <None Include="Resources\Preshow - 30 Minute Interval.mp3" />
+    <None Include="Resources\Preshow - 25 Minute Interval.mp3" />
+    <None Include="Resources\Preshow - 20 Minute Interval.mp3" />
+    <None Include="Resources\Preshow - 15 Minute Interval.mp3" />
+    <None Include="Resources\Preshow - 10 Minute Warning.mp3" />
+    <None Include="Resources\Preshow - 10 Minute Interval.mp3" />
+    <None Include="Resources\Notice - Agatha Christie.mp3" />
+    <None Include="Resources\Interval - 5 Minute Warning.mp3" />
+    <None Include="Resources\Interval - 35 Minute.mp3" />
+    <None Include="Resources\Interval - 30 Minute.mp3" />
+    <None Include="Resources\Interval - 25 Minute.mp3" />
+    <None Include="Resources\Interval - 20 Minute.mp3" />
+    <None Include="Resources\Interval - 15 Minute.mp3" />
+    <None Include="Resources\Interval - 10 Minute.mp3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="SFX-Engine-Base.ruleset" />
+    <None Include="SFXEngineKey.snk" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Audio\StandardAnnouncements.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StandardAnnouncements.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="I18N\en\Messages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>

@@ -15,7 +15,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
      * underlying data provides a more efficient means of implementing (ie override seekForward where the data is entirely cached
      * in memory to just update the current read position).
      */
-    public abstract class SoundFX : SFXEventSource, SFXPlaybackControl, SFXFadeControl {
+    public abstract class SoundFX : ISFXEventSource, ISFXPlaybackControl, ISFXFadeControl {
         #region Static Constants
         public static readonly uint FullVolume = 100;
         public static readonly uint HalfVolume = 50;
@@ -73,16 +73,18 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             }
         }
 
-        public void dupFadeState(SFXFadeControl fade) {
+        public void dupFadeState(ISFXFadeControl fade) {
             lock (_lock) {
-                this.fadeState = fade.fadeState;
-                this.volume = fade.volume;
-                this.hasAutoFade = fade.hasAutoFade;
-                this.initialSeekTo = fade.initialSeekTo;
-                this.autoFadeOutAt = fade.autoFadeOutAt;
-                this.fadeInDuration = fade.fadeInDuration;
-                this.fadeOutDuration = fade.fadeOutDuration;
-                seekToFade();
+                if (fade != null) {
+                    this.fadeState = fade.fadeState;
+                    this.volume = fade.volume;
+                    this.hasAutoFade = fade.hasAutoFade;
+                    this.initialSeekTo = fade.initialSeekTo;
+                    this.autoFadeOutAt = fade.autoFadeOutAt;
+                    this.fadeInDuration = fade.fadeInDuration;
+                    this.fadeOutDuration = fade.fadeOutDuration;
+                    seekToFade();
+                }
             }
         }
 
@@ -142,8 +144,8 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             }
         }
 
-        public virtual bool seekForward(TimeSpan ts) {
-            uint samples = (uint)Math.Round(ts.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven);
+        public virtual bool seekForward(TimeSpan length) {
+            uint samples = (uint)Math.Round(length.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven);
             return seekForward(samples);
         }
 
@@ -158,8 +160,8 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             }
         }
 
-        public virtual bool seekTo(TimeSpan ts) {
-            uint samplePosition = (uint)Math.Round(ts.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven);
+        public virtual bool seekTo(TimeSpan time) {
+            uint samplePosition = (uint)Math.Round(time.TotalSeconds * audioFormat.samplesPerSecond, MidpointRounding.ToEven);
             return seekTo(samplePosition);
         }
 
@@ -217,11 +219,30 @@ namespace com.kintoshmalae.SFXEngine.Audio {
          * unless they are reading from a single-use stream, like a network socket). Method will throw an exception if 
          * duplication is not supported.
          */
-        public virtual SoundFX dup() {
-            throw new InvalidOperationException(I18NString.Lookup("Audio_SoundFX_DupFailed"));
+        public SoundFX dup() {
+            lock (_lock) {
+                if (!canDuplicate) throw new InvalidOperationException(I18NString.Lookup("Audio_SoundFX_DupFailed"));
+                SoundFX _result = basicDup;
+                if (_result != null) {
+                    _result.seekTo(this.currentSample);         // move to the same position as the current effect...
+                    _result.dupFadeState(this);                 // ... copy the current fade conditions...
+                    _result.currentState = this.currentState;   // ... and adjust to the same play state
+                } else {
+                    throw new ArgumentNullException(I18NString.Lookup("NullPointer"));  // _result should NEVER be null
+                }
+                return _result;
+            }
+        }
+
+        protected virtual SoundFX basicDup {
+            get {
+                throw new InvalidOperationException(I18NString.Lookup("Audio_SoundFX_DupFailed"));
+            }
         }
 
         public uint read(float[] buffer, uint offset, uint count) {
+            if (buffer == null) return 0;
+            if (buffer.Length < (offset + count)) throw new ArgumentException(I18NString.Lookup("Audio_SoundFX_IncompleteBuffer"), "buffer");
             lock (_lock) {
                 // Check whether we are currently in the correct playback mode for standard operation, or whether we need special processing
                 switch (currentState) {
@@ -306,7 +327,7 @@ namespace com.kintoshmalae.SFXEngine.Audio {
             }
         }
 
-        protected uint readSilence(float[] buffer, uint offset, uint count) {
+        protected static uint readSilence(float[] buffer, uint offset, uint count) {
             Array.Clear(buffer, (int)offset, (int)count);
             return count;
         }

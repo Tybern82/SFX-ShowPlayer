@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\SFX-Engine-Base\SFX-Engine-Base.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SFXEngineKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -56,19 +63,22 @@
   <ItemGroup>
     <Compile Include="AudioFileFactory.cs" />
     <Compile Include="AudioPlaybackEngine.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MonoToMultiChannelSampleProvider.cs" />
     <Compile Include="MultiChannelToMonoSampleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SFXUtilities.cs" />
     <Compile Include="Sources\AIFFMemorySoundFX.cs" />
+    <Compile Include="Sources\FileSoundFX.cs" />
     <Compile Include="Sources\FLACMemorySoundFX.cs" />
-    <Compile Include="Sources\MemorySoundFX.cs" />
+    <Compile Include="Sources\WaveStreamSoundFX.cs" />
     <Compile Include="Sources\MP3MemorySoundFX.cs" />
     <Compile Include="Sources\OGGMemorySoundFX.cs" />
     <Compile Include="Sources\WAVEMemorySoundFX.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="SFXEngineKey.snk" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\NAudio.Flac\src\NAudio.Flac\NAudio.Flac.csproj">

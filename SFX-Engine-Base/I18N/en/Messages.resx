@@ -121,8 +121,24 @@
     <value>Attempt to load an unsupported audio type. Ensure you check the supported types before attempting to load an audio file.</value>
     <comment>Message thrown when the caller attemts to load audio data from a file type which is not supported by the current library.</comment>
   </data>
+  <data name="Audio_AudioFileFactory_LoadFileFailed" xml:space="preserve">
+    <value>Unable to load audio file. Check the file exists and is of a supported type.</value>
+    <comment>Message thrown when an error occurs during loading of an audio file.</comment>
+  </data>
+  <data name="Audio_ChannelConversionFailed" xml:space="preserve">
+    <value>Unable to convert audio file channels for output.</value>
+    <comment>Message thrown when the system is unable to correctly convert between a particular combination of channels.</comment>
+  </data>
   <data name="Audio_SoundFX_DupFailed" xml:space="preserve">
     <value>Attempt to duplicate a stream which does not support this operation. Ensure you check the stream using 'canDuplicate' before attempting to copy an effect.</value>
     <comment>Message thrown when an attempt is made to duplicate an effect which does not support duplication.</comment>
+  </data>
+  <data name="Audio_SoundFX_IncompleteBuffer" xml:space="preserve">
+    <value>A buffer of insufficient size to store the result was passed in to the call to read.</value>
+    <comment>Message thrown when the buffer passed in to the read call is not large enough to store the requested audio data.</comment>
+  </data>
+  <data name="NullPointer" xml:space="preserve">
+    <value>A required argument was null / missing.</value>
+    <comment>Message thrown when a required parameter is passed in as a null value.</comment>
   </data>
 </root>

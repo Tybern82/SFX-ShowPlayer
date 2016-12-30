@@ -10,16 +10,16 @@ namespace com.kintoshmalae.SFXEngine.Events {
     }
 
     public class SoundEventArgs : EventBaseArgs<SoundFX> {
-        public PlaybackEvent Type { get; private set; }
+        public PlaybackEvent EventType { get; private set; }
         public uint CurrentSample { get; private set; }
 
         public SoundEventArgs(SoundFX source, PlaybackEvent type, uint sample) : base(source) {
-            this.Type = type;
+            this.EventType = type;
             this.CurrentSample = sample;
         }
 
         public override String ToString() {
-            return Type + ":[" + CurrentSample + "]";
+            return EventType + ":[" + CurrentSample + "]";
         }
     }
 }

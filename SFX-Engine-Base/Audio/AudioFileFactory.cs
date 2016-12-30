@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,20 +25,20 @@ namespace com.kintoshmalae.SFXEngine.Audio {
         protected static readonly string LoadAudioFailedTypeMsg = "Audio_AudioFileFactory_LoadAudioFailedType";
 
         protected AudioFileFactory(IEnumerable<AudioDataType> supportedTypes, IEnumerable<AudioDataType> supportedMemoryTypes) {
-            this.supportedTypes.AddRange(supportedTypes);
-            this.supportedMemoryTypes.AddRange(supportedMemoryTypes);
+            if (supportedTypes != null) foreach (AudioDataType t in supportedTypes) this.supportedTypes.Add(t);
+            if (supportedMemoryTypes != null) foreach (AudioDataType t in supportedMemoryTypes) this.supportedMemoryTypes.Add(t);
         }
 
         /**
          * Determine the list of supported types capable of being read from a file by this library.
          */
-        public List<AudioDataType> supportedTypes { get; } = new List<AudioDataType>();
+        public Collection<AudioDataType> supportedTypes { get; } = new Collection<AudioDataType>();
 
         /**
          * Determine the list of supported types capable of being read from a memory buffer by this library. Note that this
          * list of types will generally be a subset (or the same as) the list of supported types readable from file.
          */
-        public List<AudioDataType> supportedMemoryTypes { get; } = new List<AudioDataType>();
+        public Collection<AudioDataType> supportedMemoryTypes { get; } = new Collection<AudioDataType>();
 
         /**
          * Load a SoundFX for reading audio data from the given file, based on the given type.
@@ -86,8 +87,12 @@ namespace com.kintoshmalae.SFXEngine.Audio {
         /**
          * Load a SoundFX from the given file reference.
          */
-        public SoundFX loadAudio(FileInfo fInfo) {
-            return loadAudio(fInfo.FullName);
+        public virtual SoundFX loadAudio(FileInfo fInfo) {
+            if ((fInfo != null) && (fInfo.Exists)) {
+                return loadAudio(fInfo.FullName);
+            } else {
+                throw new UnsupportedAudioException(I18NString.Lookup(LoadAudioFailedTypeMsg));
+            }
         }
     }
 }

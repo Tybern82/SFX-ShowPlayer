@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 
 namespace com.kintoshmalae.SFXEngine.Events {
-    public class EventBaseArgs <T> {
-        public T Source { get; private set; }
+    public class EventBaseArgs <TSource> : EventArgs {
+        public TSource Source { get; private set; }
 
-        public EventBaseArgs(T source) {
+        public EventBaseArgs(TSource source) {
             this.Source = source;
         }
 
@@ -16,14 +16,14 @@ namespace com.kintoshmalae.SFXEngine.Events {
         }
     }
 
-    public delegate void EventCallback<T>(T source, EventBaseArgs<T> args);
+    public delegate void EventCallback<T>(object sender, EventBaseArgs<T> e);
 
-    public class EventRegister <T> {
-        log4net.ILog logger = log4net.LogManager.GetLogger(typeof(EventRegister<T>));
+    public class EventRegister <TSource> {
+        log4net.ILog logger = log4net.LogManager.GetLogger(typeof(EventRegister<TSource>));
 
-        public event EventCallback<T> onTrigger;
+        public event EventCallback<TSource> onTrigger;
 
-        public void triggerEvent(T source, EventBaseArgs<T> args) {
+        public void triggerEvent(object source, EventBaseArgs<TSource> args) {
             logger.Debug("Trigger event <" + source + "> : [" + args + "]");
             onTrigger(source, args);
         }

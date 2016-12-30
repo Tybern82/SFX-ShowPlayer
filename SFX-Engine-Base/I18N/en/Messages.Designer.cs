@@ -70,11 +70,47 @@ namespace com.kintoshmalae.SFXEngine.I18N.en {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to load audio file. Check the file exists and is of a supported type..
+        /// </summary>
+        internal static string Audio_AudioFileFactory_LoadFileFailed {
+            get {
+                return ResourceManager.GetString("Audio_AudioFileFactory_LoadFileFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to convert audio file channels for output..
+        /// </summary>
+        internal static string Audio_ChannelConversionFailed {
+            get {
+                return ResourceManager.GetString("Audio_ChannelConversionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attempt to duplicate a stream which does not support this operation. Ensure you check the stream using &apos;canDuplicate&apos; before attempting to copy an effect..
         /// </summary>
         internal static string Audio_SoundFX_DupFailed {
             get {
                 return ResourceManager.GetString("Audio_SoundFX_DupFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A buffer of insufficient size to store the result was passed in to the call to read..
+        /// </summary>
+        internal static string Audio_SoundFX_IncompleteBuffer {
+            get {
+                return ResourceManager.GetString("Audio_SoundFX_IncompleteBuffer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A required argument was null / missing..
+        /// </summary>
+        internal static string NullPointer {
+            get {
+                return ResourceManager.GetString("NullPointer", resourceCulture);
             }
         }
     }
