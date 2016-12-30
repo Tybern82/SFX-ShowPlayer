@@ -89,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DynamicLoading.txt" />
+    <Content Include="SecondLanguage.txt" />
+    <None Include="I18N\en-au\sfx-showplayer.mo" />
+    <None Include="I18N\en-au\sfx-showplayer.po" />
     <None Include="Resources\Preshow - Show Beginning.mp3" />
     <None Include="Resources\Preshow - 5 Minute Warning.mp3" />
     <None Include="Resources\Preshow - 35 Minute Interval.mp3" />
