@@ -1,0 +1,106 @@
+﻿#region License
+/*
+SecondLanguage Gettext Library for .NET
+Copyright 2013, 2015 James F. Bellinger <http://www.zer7.com/software/secondlanguage>
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must
+not claim that you wrote the original software. If you use this software
+in a product, an acknowledgement in the product documentation would be
+appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and must
+not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source
+distribution.
+*/
+#endregion
+
+using System;
+using SecondLanguage;
+
+namespace SecondLanguage.Example
+{
+    class Program
+    {
+        // We could use 'new Translator()', but this is easy too.
+        // We save ourselves some typing by calling it 'T' instead of something long.
+        readonly static Translator T = Translator.Default;
+
+        static void Main(string[] args)
+        {
+            // If the computer is set up for en-US UI culture, the following line will register all .po files in
+            // en-US\ and en\ subdirectories of our program directory with the translator.
+            //
+            // To try this out, make a subdirectory for the UI culture of your computer, and put a .po file in it.
+            // Maybe some subset of the demo.po file that's in bin\.
+            T.RegisterTranslationsByCulture(@"{0}\*.po");
+
+            // Let's register a specific fallback .po file while we're at it.
+            // Typically with Gettext translations, the keys are the native language strings, so folks
+            // don't always have/need a fallback, but it's up to you...
+            //
+            // If we don't specify a second root directory parameter, and don't use a full path name,
+            // the library will search in our program directory for the file.
+            T.RegisterTranslation("demo.po");
+            //T.RegisterTranslation("demo.mo");
+
+            // OK. Let's translate some strings using these .po files.
+            // First, the easy indexer syntax:
+            Console.WriteLine("'Hello World' translates as:");
+            Console.WriteLine(T["Hello World"]);
+            Console.WriteLine();
+
+            // Supposing we have some cats and want to say how many we have. Let's use the plural syntax.
+            // The idea here is you supply a singular and plural form, and a value, and then format
+            // parameters as usual. The value is used to choose between any number of plural forms
+            // based on the particular .po file's configuration. When there's only one parameter
+            // it's a bit redundant, no question.
+            Console.WriteLine(T.TranslatePlural("We have {0} cat.", "We have {0} cats.", 0, 0));
+            Console.WriteLine(T.TranslatePlural("We have {0} cat.", "We have {0} cats.", 1, 1));
+            Console.WriteLine(T.TranslatePlural("We have {0} cat.", "We have {0} cats.", 2, 2));
+            Console.WriteLine();
+
+            // Maybe we want to use Hello World in some other context.
+            // .po files support this. See demo.po for the syntax on that end. Here, it is:
+            Console.WriteLine("'Hello World' in all caps translates as:");
+            Console.WriteLine(T.TranslateContextual("All Caps", "Hello World"));
+            Console.WriteLine();
+
+            // Contexts can also be used with the plural syntax.
+            Console.WriteLine("With boxes, if you have 1, it is a:");
+            Console.WriteLine(T.TranslateContextualPlural("Noun", "Box", "Boxes", 1));
+            Console.WriteLine("If you have 2, they are:");
+            Console.WriteLine(T.TranslateContextualPlural("Noun", "Box", "Boxes", 2));
+            Console.WriteLine();
+
+            // If none of the registered .po files have the string, the key is used.
+            // This is handy -- you can replace all of your string.Format() commands with T.Translate()
+            // or T[] with no downside and add translations whenever you get the time.
+            Console.WriteLine(T["This is in {0} of the .po files we registered.", 0]);
+            Console.WriteLine();
+
+            // Suppose our translations were C-style.
+            // This could happen if we were using a Gettext file made for C programs.
+            // Change the format callback and you're good to go.
+            var CT = new Translator() { FormatCallback = SpecialFormatters.C };
+            CT.RegisterTranslation("demo-c.po");
+            Console.WriteLine(CT.TranslatePlural("We have %d cat.", "We have %d cats.", 0, 0));
+            Console.WriteLine(CT.TranslatePlural("We have %d cat.", "We have %d cats.", 1, 1));
+            Console.WriteLine(CT.TranslatePlural("We have %d cat.", "We have %d cats.", 2, 2));
+            Console.WriteLine();
+
+            // Let's wait to exit.
+            Console.WriteLine("Press a key to exit.");
+            Console.ReadKey();
+        }
+    }
+}

@@ -39,8 +39,12 @@
     <AssemblyOriginatorKeyFile>SFXEngineKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.5\lib\net35-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.6.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\SFX-Engine-OAL\packages\log4net.2.0.6\lib\net35-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SecondLanguage, Version=1.0.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\SFX-Engine-OAL\packages\SecondLanguage.1.0.2.1\lib\net35\SecondLanguage.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
