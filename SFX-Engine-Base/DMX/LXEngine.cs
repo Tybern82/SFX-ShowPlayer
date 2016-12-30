@@ -24,7 +24,7 @@ namespace com.kintoshmalae.SFXEngine.DMX {
 
         /**
          * Defines the primary universe used by this device. It is expected that most LXEngine implementations will be used with a single
-         * device in most situations. Defaults to SFXUtilities.DefaultPrimaryUniverse (1).
+         * device in most situations. Defaults to LXUtilities.DefaultPrimaryUniverse (1).
          */
         UInt16 primaryUniverse { get; }
 

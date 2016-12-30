@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using com.kintoshmalae.SFXEngine.Audio;
 using com.kintoshmalae.SFXEngine.Events;
 
-namespace com.kintoshmalae.SFXEngine {
+namespace com.kintoshmalae.SFXEngine.Audio {
     /**
      * Records a secondary EventRegister, used to cascade the triggers made against a base register, to trigger
      * against the secondary register.
@@ -53,16 +52,5 @@ namespace com.kintoshmalae.SFXEngine {
             cascadeEvent<SoundFX>(baseEvents.onSeek, derivedEvents.onSeek);
             cascadeEvent<SoundFX>(baseEvents.onReset, derivedEvents.onReset);
         }
-
-        /**
-         * Used by the LXEngine to specify the default universe when the device is created. Since most uses are expected to be with
-         * only a single device, this will default to the base address for the universe as 1.
-         */
-        public static readonly UInt16 DefaultPrimaryUniverse = 1;
-
-        /**
-         * Used by the LXEngine to specify that the user is requesting a scene composed of all current universes operated by the engine.
-         */
-        public static readonly UInt16 AllUniversesScene = 0;
     }
 }

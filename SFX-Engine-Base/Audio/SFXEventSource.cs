@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using com.kintoshmalae.SFXEngine.Audio;
 using com.kintoshmalae.SFXEngine.Events;
 
-namespace com.kintoshmalae.SFXEngine {
+namespace com.kintoshmalae.SFXEngine.Audio {
     /**
      * Interface to the various events triggered during playback of a sound effect.
      */
