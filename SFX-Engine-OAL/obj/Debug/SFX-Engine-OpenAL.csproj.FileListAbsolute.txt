@@ -9,3 +9,15 @@ C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\obj\Debug\SFX-E
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\SFX-Engine-Base.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\log4net.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer-OpenTK\SFX-Engine-OAL\bin\Debug\SFX-Engine-Base.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\OpenTK.dll.config
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SFX-Engine-OAL.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SFX-Engine-OAL.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\OpenTK.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SFX-Engine-Base.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\log4net.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SFX-Engine-Base.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\OpenTK.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\log4net.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\obj\Debug\SFX-Engine-OpenAL.csprojResolveAssemblyReference.cache
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\obj\Debug\SFX-Engine-OAL.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\obj\Debug\SFX-Engine-OAL.pdb
