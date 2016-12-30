@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: SFX Show Player\n"
+"Language: en-au\n"
+
+#. Message thrown when the caller attemts to load audio data from a file type which is not supported by the current library.
+#: 
+msgid "Audio_AudioFileFactory_LoadAudioFailedType"
+msgstr "Attempt to load an unsupported audio type. Ensure you check the supported types before attempting to load an audio file."
+
+#. Message thrown when an error occurs during loading of an audio file.
+#: 
+msgid "Audio_AudioFileFactory_LoadFileFailed"
+msgstr "Unable to load audio file. Check the file exists and is of a supported type."
+
+#. Message thrown when the system is unable to correctly convert between a particular combination of channels.
+#: 
+msgid "Audio_ChannelConversionFailed"
+msgstr "Unable to convert audio file channels for output."
+
+#. Message thrown when an attempt is made to duplicate an effect which does not support duplication.
+#: 
+msgid "Audio_SoundFX_DupFailed"
+msgstr "Attempt to duplicate a stream which does not support this operation. Ensure you check the stream using 'canDuplicate' before attempting to copy an effect."
+
+#. Message thrown when the buffer passed in to the read call is not large enough to store the requested audio data.
+#: 
+msgid "Audio_SoundFX_IncompleteBuffer"
+msgstr "A buffer of insufficient size to store the result was passed in to the call to read."
+
+#. Message thrown when a required parameter is passed in as a null value.
+#: 
+msgid "NullPointer"
+msgstr "A required argument was null / missing."
+
