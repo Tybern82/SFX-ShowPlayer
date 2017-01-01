@@ -33,3 +33,10 @@ C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\log4net.x
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.csprojResolveAssemblyReference.cache
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\obj\Debug\SFX-Engine-NAudio.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\I18N\en-au\sfx-showplayer.mo
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\I18N\en-au\sfx-showplayer.po
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\SecondLanguage.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\SecondLanguage.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\SecondLanguage.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\SFX-Engine-NAudio.dll.CodeAnalysisLog.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-NAudio\bin\Debug\SFX-Engine-NAudio.dll.lastcodeanalysissucceeded

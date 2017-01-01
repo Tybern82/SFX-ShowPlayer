@@ -21,3 +21,10 @@ C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\log4net.xml
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\obj\Debug\SFX-Engine-OpenAL.csprojResolveAssemblyReference.cache
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\obj\Debug\SFX-Engine-OAL.dll
 C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\obj\Debug\SFX-Engine-OAL.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\I18N\en-au\sfx-showplayer.mo
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\I18N\en-au\sfx-showplayer.po
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SecondLanguage.dll
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SecondLanguage.pdb
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SecondLanguage.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SFX-Engine-OAL.dll.CodeAnalysisLog.xml
+C:\Users\jeffp\Source\Repos\SFX-ShowPlayer\SFX-Engine-OAL\bin\Debug\SFX-Engine-OAL.dll.lastcodeanalysissucceeded

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFX-Engine-Base", "..\SFX-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAudio.Flac", "..\..\NAudio.Flac\src\NAudio.Flac\NAudio.Flac.csproj", "{1BD0FA41-17B8-494C-BD88-5BF5835F6983}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondLanguage", "..\..\SecondLanguage\SecondLanguage\SecondLanguage.csproj", "{728B73DF-466A-43ED-BC90-1FC4A6CCD959}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{1BD0FA41-17B8-494C-BD88-5BF5835F6983}.Release|x64.Build.0 = Release|Any CPU
 		{1BD0FA41-17B8-494C-BD88-5BF5835F6983}.Release|x86.ActiveCfg = Release|Any CPU
 		{1BD0FA41-17B8-494C-BD88-5BF5835F6983}.Release|x86.Build.0 = Release|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Debug|x64.Build.0 = Debug|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Debug|x86.Build.0 = Debug|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Release|x64.ActiveCfg = Release|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Release|x64.Build.0 = Release|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Release|x86.ActiveCfg = Release|Any CPU
+		{728B73DF-466A-43ED-BC90-1FC4A6CCD959}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

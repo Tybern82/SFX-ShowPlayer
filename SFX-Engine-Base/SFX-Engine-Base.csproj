@@ -43,10 +43,6 @@
       <HintPath>..\SFX-Engine-OAL\packages\log4net.2.0.6\lib\net35-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SecondLanguage, Version=1.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\SFX-Engine-OAL\packages\SecondLanguage.1.0.2.1\lib\net35\SecondLanguage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -91,8 +87,12 @@
   <ItemGroup>
     <Content Include="DynamicLoading.txt" />
     <Content Include="SecondLanguage.txt" />
-    <None Include="I18N\en-au\sfx-showplayer.mo" />
-    <None Include="I18N\en-au\sfx-showplayer.po" />
+    <None Include="I18N\en-au\sfx-showplayer.mo">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="I18N\en-au\sfx-showplayer.po">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Preshow - Show Beginning.mp3" />
     <None Include="Resources\Preshow - 5 Minute Warning.mp3" />
     <None Include="Resources\Preshow - 35 Minute Interval.mp3" />
@@ -125,6 +125,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SecondLanguage\SecondLanguage\SecondLanguage.csproj">
+      <Project>{728b73df-466a-43ed-bc90-1fc4a6ccd959}</Project>
+      <Name>SecondLanguage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
