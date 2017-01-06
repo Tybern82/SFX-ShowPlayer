@@ -21,7 +21,7 @@ namespace com.kintoshmalae.SFXEngine.I18N {
         string LookupRM(string id) {
             // Lazy load the ResourceManager, but only load it once.
             if (rm == null) rm = new ResourceManager("Messages", typeof(I18NString).Assembly);
-            return rm.GetString(id);
+            return (rm != null) ? rm.GetString(id) : null;
         }
 
         string LookupRM(string id, params string[] p) {

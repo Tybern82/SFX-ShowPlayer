@@ -86,6 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DynamicLoading.txt" />
+    <None Include="Resources\bell-ring-01.mp3" />
+    <None Include="Resources\bell-ring-02.mp3" />
     <Content Include="SecondLanguage.txt" />
     <None Include="I18N\en-au\sfx-showplayer.mo">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

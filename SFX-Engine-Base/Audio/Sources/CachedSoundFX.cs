@@ -17,11 +17,10 @@ namespace com.kintoshmalae.SFXEngine.Audio.Sources {
             this.canSeek = true;
         }
 
-        public CachedSoundFX(SoundFX source) {
+        public CachedSoundFX(SoundFX source) : this(new float[0]) {
             // TODO: Check maximum length of cacheable source
             if (source == null) throw new ArgumentNullException(I18NString.Lookup("NullPointer"));
-            this.canDuplicate = true;
-            this.canSeek = true;
+            this.audioFormat = source.audioFormat;
             lock (_lock) {
                 List<float> audio = new List<float>();
                 float[] buffer = new float[source.audioFormat.channelCount];

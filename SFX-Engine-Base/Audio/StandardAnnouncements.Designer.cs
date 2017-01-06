@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SFXEngine.AudioEngine {
+namespace com.kintoshmalae.SFXEngine.Audio {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SFXEngine.AudioEngine {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SFXEngine.AudioEngine.StandardAnnouncements", typeof(StandardAnnouncements).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("com.kintoshmalae.SFXEngine.Audio.StandardAnnouncements", typeof(StandardAnnouncements).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,26 @@ namespace SFXEngine.AudioEngine {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] BellRingA {
+            get {
+                object obj = ResourceManager.GetObject("BellRingA", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] BellRingB {
+            get {
+                object obj = ResourceManager.GetObject("BellRingB", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
