@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using com.kintoshmalae.SFXEngine.Audio.Sources;
 using com.kintoshmalae.SFXEngine.Events;
 using com.kintoshmalae.SFXEngine.I18N;
 
@@ -20,6 +21,8 @@ namespace com.kintoshmalae.SFXEngine.Audio {
         public static readonly uint FullVolume = 100;
         public static readonly uint HalfVolume = 50;
         public static readonly uint NoVolume = 0;
+
+        public static readonly uint MaxCacheableLength = 30;
         #endregion
 
         log4net.ILog logger = log4net.LogManager.GetLogger(typeof(SoundFX));
@@ -231,6 +234,14 @@ namespace com.kintoshmalae.SFXEngine.Audio {
                     throw new ArgumentNullException(I18NString.Lookup("NullPointer"));  // _result should NEVER be null
                 }
                 return _result;
+            }
+        }
+
+        public virtual SoundFX cache() {
+            if (sampleLength > (MaxCacheableLength * audioFormat.samplesPerSecond)) {
+                return new BufferedSoundFX(this);
+            } else {
+                return new CachedSoundFX(this);
             }
         }
 

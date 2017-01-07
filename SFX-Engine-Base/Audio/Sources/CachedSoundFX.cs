@@ -50,6 +50,10 @@ namespace com.kintoshmalae.SFXEngine.Audio.Sources {
             return seekTo(_currentSample + samples);
         }
 
+        public override SoundFX cache() {
+            return this;
+        }
+
         protected override UInt32 readSample(Single[] buffer, UInt32 offset, UInt32 count) {
             var availableSamples = audioData.Length - _currentSample;
             var samplesRead = (uint)Math.Min(count, availableSamples);

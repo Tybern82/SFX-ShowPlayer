@@ -58,6 +58,7 @@
     <Compile Include="Audio\SFXFadeControl.cs" />
     <Compile Include="Audio\SFXPlaybackControl.cs" />
     <Compile Include="Audio\SoundFX.cs" />
+    <Compile Include="Audio\Sources\BufferedSoundFX.cs" />
     <Compile Include="Audio\Sources\CachedSoundFX.cs" />
     <Compile Include="Audio\Sources\SilenceSoundFX.cs" />
     <Compile Include="Audio\StandardAnnouncements.Designer.cs">
